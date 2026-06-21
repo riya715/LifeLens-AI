@@ -28,3 +28,7 @@ LifeLens AI is an AI-powered journal analysis application built using Flask and 
 pip install flask textblob
 python backend/app.py
 ```
+
+Open:
+
+http://127.0.0.1:5000
