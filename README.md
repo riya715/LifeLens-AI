@@ -32,3 +32,17 @@ python backend/app.py
 Open:
 
 http://127.0.0.1:5000
+
+## Screenshots
+
+### Home Page
+
+![Home](screenshots/home.png)
+
+### Positive Analysis
+
+![Positive](screenshots/positive.png)
+
+### Negative Analysis
+
+![Negative](screenshots/negative.png)
