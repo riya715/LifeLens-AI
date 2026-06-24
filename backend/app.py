@@ -235,9 +235,28 @@ def create_app():
         if "excited" in lower_text or "happy" in lower_text:
             mood = "Positive 😊"
 
-        if "studied" in lower_text or "worked" in lower_text:
-            productivity = "High 🚀"
-        
+            productivity_score = 40
+
+            if "studied" in lower_text:
+                productivity_score += 20
+
+            if "worked" in lower_text:
+                productivity_score += 20
+
+            if "project" in lower_text:
+                productivity_score += 10
+
+            if "learning" in lower_text:
+                productivity_score += 10
+
+            if "completed" in lower_text:
+                productivity_score += 10
+
+            if productivity_score >= 70:
+                productivity = "High 🚀"
+            else:
+                productivity = "Medium"
+                    
         if mood == "Positive 😊" and productivity == "High 🚀":
             insight = """
             You had a productive day.
@@ -263,6 +282,15 @@ def create_app():
             Today appears to be a normal day.
             Try setting one small goal for tomorrow.
             """
+
+        if mood == "Positive 😊":
+            motivation = "🚀 Keep going! You're making progress every day."
+
+        elif mood == "Negative 😔":
+            motivation = "💜 Tough days don't last. Tomorrow is a new opportunity."
+
+        else:
+            motivation = "✨ Small consistent actions create big results."   
 
         return f"""
         <!DOCTYPE html>
@@ -407,16 +435,38 @@ def create_app():
         </div>
         <div class="card">
 
-    <div class="label">
+        <div class="label">
         📈 Mood Score
-    </div>
+        </div>
 
-    <div class="value">
+        <div class="value">
         {round(sentiment_score, 2)}
-    </div>
+        </div>
 
-</div>
+        <div style="
+        width:100%;
+        height:12px;
+        background:#2a1f4f;
+        border-radius:10px;
+        margin-top:12px;
+        overflow:hidden;
+        ">
 
+        <div style="
+        width:{int((sentiment_score + 1) * 50)}%;
+        height:100%;
+        background:linear-gradient(
+        90deg,
+        #ff4fd8,
+        #7b61ff,
+        #00d4ff
+        );
+        ">
+        </div>
+
+        </div>
+
+        </div>
         <div class="card">
 
         <div class="label">
@@ -425,6 +475,17 @@ def create_app():
 
         <div class="value productivity">
         {productivity}
+        </div>
+
+        </div>
+        <div class="card">
+
+        <div class="label">
+        📈 Productivity Score
+        </div>
+
+        <div class="value">
+        {productivity_score}%
         </div>
 
         </div>
@@ -459,6 +520,17 @@ def create_app():
            <div class="journal">
             {insight}
            </div>
+
+        </div>
+        <div class="card">
+
+        <div class="label">
+        🔥 Daily Motivation
+        </div>
+
+        <div class="journal">
+        {motivation}
+        </div>
 
         </div>
 
