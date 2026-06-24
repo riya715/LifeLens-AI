@@ -46,3 +46,19 @@ http://127.0.0.1:5000
 ### Negative Analysis
 
 ![Negative](screenshots/negative.png)
+
+Open:
+
+http://127.0.0.1:5001
+
+## 🎯 Future Enhancements
+
+- PDF Report Download
+- Mood History Tracking
+- Weekly Analytics Dashboard
+- Journal Recommendations
+- AI Chat Assistant
+
+## 👩‍💻 Author
+
+Built with ❤️ by Riya
