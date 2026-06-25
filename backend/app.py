@@ -217,6 +217,7 @@ def create_app():
 
         mood = "Neutral 😐"
         productivity = "Medium"
+        productivity_score = 40
 
         blob = TextBlob(content)
         sentiment_score = blob.sentiment.polarity
@@ -231,7 +232,7 @@ def create_app():
         if sentiment_score > 0.2:
             mood = "Positive 😊"
 
-            productivity_score = 40
+           
 
         elif sentiment_score < -0.2:
             mood = "Negative 😔"
