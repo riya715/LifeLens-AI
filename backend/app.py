@@ -210,7 +210,15 @@ def create_app():
         if file is None:
             return "No file uploaded", 400
 
-        content = file.read().decode("utf-8")
+        data = file.read()
+
+        try:
+            content = data.decode("utf-8")
+        except UnicodeDecodeError:
+            return """
+            <h2>❌ Invalid File</h2>
+            <p>Please upload a plain UTF-8 encoded .txt journal file.</p>
+            """, 400
         word_count = len(content.split())
         reading_time = max(1, word_count // 200)
         lower_text = content.lower()
