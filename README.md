@@ -145,6 +145,14 @@ http://127.0.0.1:5001
 
 ---
 
+## 🔗 Live Demo
+
+🌐 https://lifelens-ai-1.onrender.com
+
+## 📂 Source Code
+
+https://github.com/riya715/LifeLens-AI
+
 ## 👩‍💻 Author
 
 **Riya Kumari**
