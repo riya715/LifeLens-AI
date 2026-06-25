@@ -90,7 +90,7 @@ git clone https://github.com/riya715/LifeLens-AI.git
 ### Move into the project
 
 ```bash
-cd LifeLensAI
+cd LifeLens-AI
 ```
 
 ### Create a virtual environment
