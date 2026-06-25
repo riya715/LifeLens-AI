@@ -1,11 +1,28 @@
 
+# Python cache
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Virtual environments
 venv/
 .venv/
 
-__pycache__/
-.pytest_cache/
+# Flask
+instance/
+.flaskenv
 
-*.pyc
+# Environment variables
+.env
+
+# macOS
 .DS_Store
 
-.env
+# VS Code
+.vscode/
+
+# Pytest
+.pytest_cache/
+
+# Generated files
+LifeLens_Report.pdf
